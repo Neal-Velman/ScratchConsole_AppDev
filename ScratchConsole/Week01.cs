@@ -8,7 +8,7 @@ namespace ScratchConsole
     {
         public static void Run()
         {
-
+            DemoStrings();
         }
 
         public static void DemoStrings()
@@ -17,6 +17,11 @@ namespace ScratchConsole
             char third = words[2];
 
             int countOfChars = words.Length;
+
+            string expected = "John";
+            Console.WriteLine("Enter the name \"John\": ");
+            string? actual = Console.ReadLine();
+            Console.WriteLine("Expected = Actual: " + (expected.ToLower() == actual?.ToLower()));
         }
 
         public static void DemoDataTypes()
