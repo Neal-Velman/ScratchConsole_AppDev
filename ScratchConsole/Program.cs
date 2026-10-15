@@ -12,7 +12,7 @@
              * Greet the user by their name
             */
 
-            Week01.Run();
+            Week02.Run();
 
             //string? userName = null;
             //Console.WriteLine("Enter your name: ");
