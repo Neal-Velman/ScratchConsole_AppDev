@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ScratchConsole.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ScratchConsole.Models
 {
-    public class Movie
+    public class Movie : IPlayable
     {
         public const int firstYear = 1888;
 
@@ -40,9 +41,21 @@ namespace ScratchConsole.Models
             }
         } = 1888;
 
-        
+        public float Score { get; set; }
 
+        public void Play()
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Stop()
+        {
+            throw new NotImplementedException();
+        }
 
+        public override string ToString()
+        {
+            return $"{Title} ({Year}) - {Score} / 10";
+        }
     }
 }

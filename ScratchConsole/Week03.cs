@@ -9,7 +9,17 @@ namespace ScratchConsole
     {
         public static void Run()
         {
-            DemoModels();
+            DemoInterfaces();
+        }
+
+        private static void DemoInterfaces()
+        {
+
+        }
+
+        private static void DemoCollections()
+        {
+            List<int> list;
         }
 
         private static void DemoBasicLanguageFeatures()
@@ -57,7 +67,7 @@ namespace ScratchConsole
             Movie movie = new Movie();
             int number = Movie.firstYear;
 
-            movie.SetTitle("Land of the Lost");
+            //movie.SetTitle("Land of the Lost");
             movie.Year = 2009;
 
             Console.WriteLine($"Year: {movie.Year}");
