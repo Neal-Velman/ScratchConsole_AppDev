@@ -9,7 +9,22 @@ namespace ScratchConsole
     {
         public static void Run()
         {
-            DemoInterfaces();
+            DemoDogs();
+        }
+
+        private static void DemoDogs()
+        {
+            Dog izzy = new Dog() { Name = "Isabella", Age = 15, Breed = "Black Lab" };
+            Dog taTyr = new Dog() { Name = "Tyr", Age = 2, Breed = "Husky" };
+
+            Dog piper = izzy + taTyr;
+
+            Console.WriteLine($"d1: {izzy}");
+            Console.WriteLine($"d2: {taTyr}");
+            Console.WriteLine($"d3: {piper}");
+
+            Dog izzy2 = new Dog() { Name = "Isabella", Age = 15, Breed = "Black Lab" };
+            Console.WriteLine("Are d1 and d4 equal? " + (izzy == izzy2));
         }
 
         private static void DemoInterfaces()
