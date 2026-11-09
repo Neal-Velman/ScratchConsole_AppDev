@@ -9,7 +9,19 @@ namespace ScratchConsole
     {
         public static void Run()
         {
-            DemoRefVsValTypes();
+            Program.MyDemoDelegate += PrintRunningMessage;
+        }
+
+        private static void PrintRunningMessage()
+        {
+            Console.WriteLine("Week 04 is running.");
+        }
+
+        public static void Unsubscribe()
+        {
+            Program.MyDemoDelegate -= PrintRunningMessage;
+            //Program.MyDemoDelegate = null; // Reset the whole list
+
         }
 
         private static void DemoRefVsValTypes()

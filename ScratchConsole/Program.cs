@@ -1,30 +1,35 @@
-﻿namespace ScratchConsole { 
+﻿using ScratchConsole.Delegates;
+
+namespace ScratchConsole { 
 
     public class Program
     {
+
+        // Delegates are great, but they're easy to break or misuse.
+        // This is why events exist.
+        public static DemoDelegate? MyDemoDelegate { get; set; }
         private static void Main(String[] args)
         {
-
-            // Declare a string variable to hold the user's name
-            /*
-             * Prompt the user for their name
-             * Store their input in the name variable
-             * Greet the user by their name
-            */
-
+            // Subscribe to the delegate
+            Week04.Run();
+            MyDemoDelegate += Week03.Run;
+            Week04.Run();
+            //MyDemoDelegate += Week04.Run;
+            MyDemoDelegate += Week06.Run;
             Week04.Run();
 
-            //string? userName = null;
-            //Console.WriteLine("Enter your name: ");
-            //userName = Console.ReadLine();
-            //if (userName != null)
-            //{
-            //    Console.WriteLine("Hello, " + userName + "!");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("No name entered.");
-            //}
+            // Invoke the delegate
+            //MyDemoDelegate.Invoke(); // This is the long form
+            //MyDemoDelegate(); // This is the short form ... STILL NOT A METHOD THOUGH
+
+            MyDemoDelegate?.Invoke();
+            Console.WriteLine();
+            Week04.Unsubscribe();
+            Week04.Unsubscribe();
+            Week04.Unsubscribe();
+            MyDemoDelegate?.Invoke();
+            Week04.Unsubscribe();
+
         }
     }
 }

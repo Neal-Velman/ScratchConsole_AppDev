@@ -9,7 +9,7 @@ namespace ScratchConsole
     {
         public static void Run()
         {
-            DemoDogs();
+            Console.WriteLine("Week 03 is running.");
         }
 
         private static void DemoDogs()
