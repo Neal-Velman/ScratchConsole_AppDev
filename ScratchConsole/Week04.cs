@@ -9,7 +9,7 @@ namespace ScratchConsole
     {
         public static void Run()
         {
-            Program.MyDemoDelegate += PrintRunningMessage;
+            Program.MyDemoEvent += PrintRunningMessage;
         }
 
         private static void PrintRunningMessage()
@@ -19,8 +19,8 @@ namespace ScratchConsole
 
         public static void Unsubscribe()
         {
-            Program.MyDemoDelegate -= PrintRunningMessage;
-            //Program.MyDemoDelegate = null; // Reset the whole list
+            Program.MyDemoEvent -= PrintRunningMessage;
+            //Program.MyDemoEvent = null; // Reset the whole list
 
         }
 
